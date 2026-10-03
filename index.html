@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title> <!-- 将被 app.js 动态覆盖 -->
+    <link id="favicon" rel="icon" type="image/png" href="">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root {
+            --sage-primary: #588157;
+            --sage-light: #f4f7f4;
+            --sage-border: #d8e2dc;
+            --sage-hover: #3a5a40;
+        }
+        body {
+            background-color: var(--sage-light);
+            color: #2b2d42;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#588157] selection:text-white pt-24">
+
+    <!-- 1. 顶部导航栏 -->
+    <div id="navbar-container"></div>
+
+    <!-- 2. 全局提示 Toast (文字由 JS 注入) -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-gray-900 text-white text-xs px-4 py-2.5 rounded-lg shadow-xl flex items-center gap-2"></div>
+
+    <!-- 3. 头图 Hero 区域 -->
+    <section id="hero-container" class="w-full"></section>
+
+    <!-- 4. 主体文章区域 -->
+    <main id="main-container" class="flex-1"></main>
+
+    <!-- 5. 联系我们区域 -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-12 w-full space-y-20">
+        <section id="contact-container"></section>
+    </main>
+
+    <!-- 6. 底部 Footer -->
+    <div id="footer-container"></div>
+
+    <!-- 引入配置文件与逻辑引擎 -->
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
