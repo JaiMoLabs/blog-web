@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading...</title> <!-- 将被 app.js 动态覆盖 -->
+    <title>Loading...</title>
     <link id="favicon" rel="icon" type="image/png" href="">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
@@ -25,7 +25,7 @@
     <!-- 1. 顶部导航栏 -->
     <div id="navbar-container"></div>
 
-    <!-- 2. 全局提示 Toast (文字由 JS 注入) -->
+    <!-- 2. 全局提示 Toast -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-gray-900 text-white text-xs px-4 py-2.5 rounded-lg shadow-xl flex items-center gap-2"></div>
 
     <!-- 3. 头图 Hero 区域 -->
@@ -42,8 +42,25 @@
     <!-- 6. 底部 Footer -->
     <div id="footer-container"></div>
 
-    <!-- 引入配置文件与逻辑引擎 -->
-    <script src="config.js"></script>
-    <script src="app.js"></script>
+    <!-- 引入配置 -->
+    <script src="js/config/common.js"></script>
+    <script src="js/config/pages/home.js"></script>
+    
+    <!-- 引入后端数据库交互服务 -->
+    <script src="js/database/appscript.js"></script>
+    
+    <!-- 引入公共核心与工具 -->
+    <script src="js/core/utils.js"></script>
+    <script src="js/core/navbar.js"></script>
+    <script src="js/core/hero.js"></script>
+    <script src="js/core/contact.js"></script>
+    <script src="js/core/footer.js"></script>
+    
+    <!-- 引入页面组件 -->
+    <script src="js/components/sidebar.js"></script>
+    <script src="js/components/articles.js"></script>
+    
+    <!-- 引入页面主入口逻辑 -->
+    <script src="js/pages/home.js"></script>
 </body>
 </html>

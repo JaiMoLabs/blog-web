@@ -1,19 +1,21 @@
 // ==========================================
-// 1. 官网数据配置文件 (config.js)
-// 所有的文本、链接、提示语、图片配置全在这里，修改网页内容只需改此文件
+// 1. 全局公共配置文件 (js/config/common.js)
 // ==========================================
 
 window.SITE_CONFIG = {
-    // [基础元数据] 网页标签页配置
     meta: {
-        siteName: "JaiMo Blogs",
         title: "JaiMo Labs | Blog",
-        logoImg: "picture/avatar.png",
-        homeLink: "https://blog.jaimo.xyz", // Logo 点击后的跳转链接
-        walletAddress: "jaimo.eth" // 点击 Support 时复制的地址
+        logoImg: "images/avatar.png",
+        backgroundImage: "images/background.png",
+        siteName: "JaiMo Blogs",
+        homeLink: "https://blog.jaimo.xyz"
     },
 
-    // [全局提示语] 弹窗与交互状态文本
+    // 后端服务与API相关配置
+    api: {
+        googleScriptURL: "https://script.google.com/macros/s/AKfycbxV1CMbO_pJ-zK0jxnS7VJqOue4AkPyCK7aiN_9A2rsLMtu6_FRgcxoVKuXIBV0Z4ar0A/exec"
+    },
+
     messages: {
         copySuccess: "✅ ENS Address Copied!",
         walletComingSoon: "Coming soon with Mainnet launch!",
@@ -23,32 +25,22 @@ window.SITE_CONFIG = {
         emailError: "Something went wrong, please try again later."
     },
 
-    // [顶部导航栏]
     navbar: {
-        slogan: "Build from first principles.",
         topicsBtnText: "Topics",
+        slogan: "Build from first principles.",
         supportBtnText: "Support",
         connectWalletBtnText: "Connect Wallet",
+        walletAddress: "jaimo.eth",
         topicsMenu: [
-            { name: "Token Price Simulation", link: "https://github.com/jaimoeth/topics/blob/main/token-price-simulation.ipynb" },
-            { name: "Contact us", link: "#contact-container" }
+            { name: "Token Price Simulation", link: "https://github.com/jaimoeth/topics/blob/main/token-price-simulation.ipynb", type: "article" },
+            { name: "✅ Verify via ENS", link: "https://app.ens.domains/jaimo.eth", type: "action" },
+            { name: "💬 Contact Us", link: "#contact-container", type: "action" }
         ]
     },
 
-    // [全宽头图区域]
-    hero: {
-        backgroundImage: "picture/background.png",
-        title: "JaiMo Blogs",
-        subtitle: "Build from first principles."
-    },
-
-    // [主体数据库与文章流]
     database: {
         title: "Database",
         titleIcon: "🌱",
-        latestTitle: "Latest Articles",
-        latestIcon: "🪵",
-        latestCount: 5, // 右侧展示最新文章的数量
         categories: [
             {
                 name: "Topics",
@@ -74,7 +66,7 @@ window.SITE_CONFIG = {
                         date: "2026/10/12",
                         tag: "Python",
                         url: "https://github.com/jaimoeth/python/blob/main/basics-english.ipynb",
-                        summary: "These open-source study notes are compiled based on MIT 6.0001, Introduction to Computer Science and Programming in Python..."
+                        summary: "These open-source study notes are based on the MIT 6.0001 course taught by Dr. Ana Bell and other professors. They are shared under the CC-BY-NC-SA license."
                     },
                     {
                         id: "basics-chinese",
@@ -97,13 +89,20 @@ window.SITE_CONFIG = {
                         tag: "Products",
                         url: "https://github.com/JaiMoLabs/blog-web",
                         summary: "An open-source template for Web3 static blogs and personal knowledge bases, showcasing decentralized web practices."
+                    },
+                    {
+                        id: "text-website",
+                        title: "Text Website",
+                        date: "2026/10/15",
+                        tag: "Products",
+                        url: "https://github.com/JaiMoLabs/text-web",
+                        summary: "An open-source template for Web3 static blog content pages, designed to be used with open-source blog content."
                     }
                 ]
             }
         ]
     },
 
-    // [联系我们板块]
     contact: {
         title: "Connect with us",
         subtitle: "Have questions, feedback, or want to collaborate? Reach out through our official channels.",
@@ -127,22 +126,21 @@ window.SITE_CONFIG = {
         }
     },
 
-    // [底部栏配置]
     footer: {
         copyright: "@2026 JaiMo Labs. All rights reserved.",
         tagline: "Decentralized & Autonomous",
         columns: [
             {
                 title: "Topics",
-                links: [{ name: "Token Price Simulation", url: "https://github.com/jaimoeth/topics/blob/main/token-price-simulation.ipynb" }]
-            },
-            {
-                title: "Products",
-                links: [{ name: "Blog Website", url: "https://github.com/JaiMoLabs/blog-web" }]
+                links: [
+                    { name: "Token Price Simulation", url: "https://github.com/jaimoeth/topics/blob/main/token-price-simulation.ipynb" }
+                ]
             },
             {
                 title: "Career",
-                links: [{ name: "Coming Soon", url: "https://github.com/JaiMoLabs" }]
+                links: [
+                    { name: "Coming Soon.", url: "https://github.com/JaiMoLabs" }
+                ]
             },
             {
                 title: "Python",
@@ -150,19 +148,30 @@ window.SITE_CONFIG = {
                     { name: "Basics - English", url: "https://github.com/jaimoeth/python/blob/main/basics-english.ipynb" },
                     { name: "Basics - Chinese", url: "https://github.com/jaimoeth/python/blob/main/basics-chinese.ipynb" }
                 ]
+            },
+            {
+                title: "Products",
+                links: [
+                    { name: "Blog Website", url: "https://github.com/JaiMoLabs/blog-web" },
+                    { name: "Text Website", url: "https://github.com/JaiMoLabs/text-web" }
+                ]
             }
         ]
     },
 
-    // [社交媒体配置] 
     socialLinks: [
+        {
+            name: "ENS",
+            url: "https://app.ens.domains/jaimo.eth",
+            svg: '<path fill="currentColor" d="M11.725.223 5.107 11.13a.146.146 0 0 1-.237.018c-.583-.692-2.753-3.64-.067-6.327 2.45-2.452 5.572-4.2 6.73-4.804.13-.068.269.08.192.206m-.366 23.747c.132.093.295-.064.206-.2-1.478-2.251-6.392-9.744-7.07-10.869-.67-1.11-1.987-2.953-2.097-4.53-.011-.158-.228-.19-.283-.042a10 10 0 0 0-.27.85c-1.105 4.11.5 8.472 3.985 10.916zm.909-.193 6.618-10.907a.146.146 0 0 1 .237-.018c.582.692 2.753 3.64.067 6.327-2.45 2.452-5.572 4.2-6.73 4.804-.13.068-.269-.08-.192-.206M12.641.028c-.132-.093-.295.065-.206.2 1.478 2.252 6.392 9.745 7.07 10.87.67 1.109 1.987 2.952 2.097 4.53.011.157.228.19.283.041.088-.239.182-.524.27-.85 1.105-4.11-.5-8.472-3.985-10.915z"/>'
+        },
         {
             name: "X (Twitter)",
             url: "https://x.com/jaimoeth",
             svg: '<path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>'
         },
         {
-            name: "Bluesky",
+            name: "BlueSky",
             url: "https://bsky.app/profile/jaimo.eth.limo",
             svg: '<path fill="currentColor" d="M12 10.8c-1.087-2.114-4.046-6.052-7.983-8.73-2.16-1.464-3.517-1.144-4.017-.924-.656.292-.767 1.218-.767 1.838 0 1.077.585 7.18 1.133 8.356 1.049 2.27 3.447 3.013 5.568 3.272-1.77.302-3.414 1.144-3.414 3.125 0 2.215 1.93 3.033 4.295 3.033 4.706 0 6.185-3.327 6.185-5.96 0-.27-.015-.54-.035-.81.02.27.035.54.035.81 0 2.633 1.479 5.96 6.185 5.96 2.365 0 4.295-.818 4.295-3.033 0-1.981-1.644-2.823-3.414-3.125 2.121-.259 4.519-1.002 5.568-3.272.548-1.176 1.133-7.279 1.133-8.356 0-.62-.111-1.546-.767-1.838-.5-.22-1.857-.54-4.017.924-3.937 2.678-6.896 6.616-7.983 8.73z"/>'
         },
