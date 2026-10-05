@@ -11,11 +11,6 @@ window.SITE_CONFIG = {
         homeLink: "https://blog.jaimo.xyz"
     },
 
-    // 后端服务与API相关配置
-    api: {
-        googleScriptURL: "https://script.google.com/macros/s/AKfycbxV1CMbO_pJ-zK0jxnS7VJqOue4AkPyCK7aiN_9A2rsLMtu6_FRgcxoVKuXIBV0Z4ar0A/exec"
-    },
-
     messages: {
         copySuccess: "✅ ENS Address Copied!",
         walletComingSoon: "Coming soon with Mainnet launch!",
@@ -106,6 +101,7 @@ window.SITE_CONFIG = {
     contact: {
         title: "Connect with us",
         subtitle: "Have questions, feedback, or want to collaborate? Reach out through our official channels.",
+        scriptURL: "https://script.google.com/macros/s/AKfycbxUkg0mIXmkcLyl_-NwthQQSnN8E1WaBGkiU41U88R-kn_tbfl5QXIaVJuf4fDMn2tcoA/exec",
         cards: {
             support: {
                 title: "Get Support",

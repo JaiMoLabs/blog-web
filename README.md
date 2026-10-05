@@ -29,7 +29,7 @@ blog-web/
 │   │       └── 📜 tps.js
 │   │
 │   ├── 📁 database/               # 后端数据库
-│   │   └── 📜 appscripts.js       # Google Apps Script 相关
+│   │   └── 📜 appscript.js        # Google Apps Script 相关
 │   │
 │   └── 📁 pages/                  # 页面入口
 │       ├── 📜 home.js             # 对应 index.html
