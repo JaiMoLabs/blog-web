@@ -13,7 +13,7 @@ window.SITE_CONFIG = {
 
     // 后端服务与API相关配置
     api: {
-        googleScriptURL: "https://script.google.com/macros/s/AKfycbxV1CMbO_pJ-zK0jxnS7VJqOue4AkPyCK7aiN_9A2rsLMtu6_FRgcxoVKuXIBV0Z4ar0A/exec"
+        googleScriptURL: "https://script.google.com/macros/s/AKfycbxxHkGniVjoZMsDe2LVOcgc1nbK9FUQ9R-zvbuI9m8tKO__tYQuxUfBxhAPoXAlaO9qUg/exec"
     },
 
     messages: {
