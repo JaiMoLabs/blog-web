@@ -13,6 +13,7 @@ blog-web/
 ├── 📁 js/
 │   ├── 📁 core/                   # 公共核心 | 通用功能
 │   │   ├── 📜 navbar.js           # 顶部导航
+│   │   ├── 📜 wallet.js           # 顶部钱包
 │   │   ├── 📜 hero.js             # 顶部背景
 │   │   ├── 📜 contact.js          # 联系我们
 │   │   ├── 📜 footer.js           # 底部
