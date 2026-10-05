@@ -28,11 +28,11 @@ function renderLatestArticles(database) {
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-1">
                             <a href="${art.url || '#'}" target="_blank" rel="noopener noreferrer" class="hover:text-green-700 transition-colors">
-                                ${art.title}
+                                ${escapeHtml(art.title)}
                             </a>
                         </h3>
                         <div class="text-xs text-gray-400 mb-3">${art.date}</div>
-                        <p class="text-gray-600 text-sm leading-relaxed">${art.summary}</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">${escapeHtml(art.summary)}</p>
                     </div>
                 `).join('')}
             </div>

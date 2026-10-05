@@ -18,11 +18,11 @@ window.SITE_CONFIG = {
 
     messages: {
         copySuccess: "✅ ENS Address Copied!",
-        walletComingSoon: "Coming soon with Mainnet launch!",
-        emailInvalid: "Please enter a valid email address.",
+        walletComingSoon: "❌ Coming soon with Mainnet launch!",
+        emailInvalid: "❌ Please enter a valid email address.",
         emailSubmitting: "Submitting...",
-        emailSuccess: "Thank you for subscribing!",
-        emailError: "Something went wrong, please try again later."
+        emailSuccess: "✅ Thank you for subscribing!",
+        emailError: "❌ Something went wrong, please try again later."
     },
 
     navbar: {

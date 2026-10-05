@@ -12,7 +12,7 @@ window.DATABAR_CONFIG = {
                 icon: "📊",
                 articles: [
                     {
-                        id: "token-price-pimulation",
+                        id: "token-price-simulation",
                         title: "Token Price Simulation",
                         date: "2026/10/10",
                         tag: "Topics",

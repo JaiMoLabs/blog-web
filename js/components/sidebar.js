@@ -20,7 +20,7 @@ function renderSidebar(database) {
                             ${cat.articles.map(art => `
                                 <div class="py-0.5">
                                     <a href="${art.url || '#'}" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-600 hover:text-green-700 transition-colors inline-block">
-                                        · ${art.title}
+                                        · ${escapeHtml(art.title)}
                                     </a>
                                 </div>
                             `).join('')}
