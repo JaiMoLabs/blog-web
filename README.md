@@ -25,11 +25,12 @@ blog-web/
 │   ├── 📁 config/
 │   │   ├── 📜 common.js           # 公共配置
 │   │   └── 📁 pages/              # 页面专属配置 | 可选
-│   │       ├── 📜 home.js
+│   │       ├── 📜 databar.js      # 左侧文章数据库导航配置
+│   │       ├── 📜 home.js         # 主页面单独配置
 │   │       └── 📜 tps.js
 │   │
 │   ├── 📁 database/               # 后端数据库
-│   │   └── 📜 appscript.js        # Google Apps Script 相关
+│   │   └── 📜 appscript.js        # Google Apps Script 后端连接存储
 │   │
 │   └── 📁 pages/                  # 页面入口
 │       ├── 📜 home.js             # 对应 index.html

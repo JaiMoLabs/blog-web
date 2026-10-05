@@ -23,7 +23,7 @@
 <body class="min-h-screen flex flex-col justify-between selection:bg-[#588157] selection:text-white pt-24">
 
     <!-- 1. 顶部导航栏 -->
-    <div id="navbar-container"></div>
+    <header id="navbar-container"></header>
 
     <!-- 2. 全局提示 Toast -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-gray-900 text-white text-xs px-4 py-2.5 rounded-lg shadow-xl flex items-center gap-2"></div>
@@ -35,15 +35,14 @@
     <main id="main-container" class="flex-1"></main>
 
     <!-- 5. 联系我们区域 -->
-    <main class="flex-grow max-w-7xl mx-auto px-6 py-12 w-full space-y-20">
-        <section id="contact-container"></section>
-    </main>
+    <section id="contact-container" class="flex-grow max-w-7xl mx-auto px-6 py-12 w-full space-y-20"></section>
 
     <!-- 6. 底部 Footer -->
-    <div id="footer-container"></div>
+    <footer id="footer-container"></footer>
 
     <!-- 引入配置 -->
     <script src="js/config/common.js"></script>
+    <script src="js/config/pages/databar.js"></script>
     <script src="js/config/pages/home.js"></script>
     
     <!-- 引入后端数据库交互服务 -->
