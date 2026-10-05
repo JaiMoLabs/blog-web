@@ -2,10 +2,12 @@
 // 工具与全局交互 (js/core/utils.js)
 // ==========================================
 
+window.Blog = window.Blog || {};
+
 /**
  * 简单转义 HTML，防止 XSS
  */
-function escapeHtml(str) {
+Blog.escapeHtml = function(str) {
     if (typeof str !== 'string') return str;
     return str
         .replace(/&/g, '&amp;')
@@ -15,7 +17,7 @@ function escapeHtml(str) {
         .replace(/'/g, '&#39;');
 }
 
-function initDocumentMeta(meta) {
+Blog.initDocumentMeta = function(meta) {
     document.title = meta.title;
     const faviconLink = document.getElementById('favicon');
     if (faviconLink && meta.logoImg) {
@@ -23,23 +25,23 @@ function initDocumentMeta(meta) {
     }
 }
 
-function toggleTopicsMenu() {
+Blog.toggleTopicsMenu = function() {
     const menu = document.getElementById('topicsDropdown');
     if (menu) menu.classList.toggle('hidden');
 }
 
-function copyWalletAddress() {
+Blog.copyWalletAddress = function() {
     const config = window.SITE_CONFIG;
     const walletAddr = config.navbar.walletAddress;
 
     navigator.clipboard.writeText(walletAddr).then(() => {
-        showToast(config.messages.copySuccess);
+        Blog.showToast(config.messages.copySuccess);
     }).catch(() => {
-        showToast('复制失败，请手动复制');
+        Blog.showToast('复制失败，请手动复制');
     });
 }
 
-function initGlobalEvents() {
+Blog.initGlobalEvents = function() {
     window.addEventListener('click', function(e) {
         const btn = document.getElementById('topicsBtn');
         const menu = document.getElementById('topicsDropdown');
@@ -54,7 +56,7 @@ function initGlobalEvents() {
  * @param {string} message 要显示的文字
  * @param {number} duration 显示多久（毫秒），默认 2500
  */
-function showToast(message, duration = 2500) {
+Blog.showToast = function(message, duration = 2500) {
     const toast = document.getElementById('toast');
     if (!toast) return;
 

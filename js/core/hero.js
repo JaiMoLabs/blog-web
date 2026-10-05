@@ -2,7 +2,9 @@
 // 顶部背景组件 (js/core/hero.js)
 // ==========================================
 
-function renderHero(commonConfig) {
+window.Blog = window.Blog || {};
+
+Blog.renderHero = function(commonConfig) {
     const heroContainer = document.getElementById("hero-container");
     if(!heroContainer) return;
 

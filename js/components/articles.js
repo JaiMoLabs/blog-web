@@ -2,7 +2,9 @@
 // 右侧文章流组件 (js/components/articles.js)
 // ==========================================
 
-function renderLatestArticles(database) {
+window.Blog = window.Blog || {};
+
+Blog.renderLatestArticles = function(database) {
     let allArticles = [];
     database.categories.forEach(cat => {
         cat.articles.forEach(art => {
@@ -24,22 +26,22 @@ function renderLatestArticles(database) {
                 ${latestArticles.map(art => `
                     <div class="bg-white border border-gray-200/80 rounded-xl p-6 shadow-xs">
                         <div class="inline-block px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-md mb-3">
-                            ${art.tag}
+                            ${Blog.escapeHtml(art.tag)}
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-1">
                             <a href="${art.url || '#'}" target="_blank" rel="noopener noreferrer" class="hover:text-green-700 transition-colors">
-                                ${escapeHtml(art.title)}
+                                ${Blog.escapeHtml(art.title)}
                             </a>
                         </h3>
-                        <div class="text-xs text-gray-400 mb-3">${art.date}</div>
-                        <p class="text-gray-600 text-sm leading-relaxed">${escapeHtml(art.summary)}</p>
+                        <div class="text-xs text-gray-400 mb-3">${Blog.escapeHtml(art.date)}</div>
+                        <p class="text-gray-600 text-sm leading-relaxed">${Blog.escapeHtml(art.summary)}</p>
                     </div>
                 `).join('')}
             </div>
 
             <div class="text-center pt-4 text-sm text-gray-500">
-                Showing ${latestArticles.length} latest updates. Explore all topics in the ${database.titleIcon} <span class="font-semibold text-gray-700">${database.title}</span> on the left.
+                Showing ${latestArticles.length} latest updates. Explore all topics in the ${database.titleIcon} <span class="font-semibold text-gray-700">${Blog.escapeHtml(database.title)}</span> on the left.
             </div>
         </div>
     `;
-}
+};

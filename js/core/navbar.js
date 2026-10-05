@@ -2,7 +2,9 @@
 // 顶部导航栏组件 (js/core/navbar.js)
 // ==========================================
 
-function renderNavbar(commonConfig) {
+window.Blog = window.Blog || {};
+
+Blog.renderNavbar = function(commonConfig) {
     const container = document.getElementById('navbar-container');
     if (!container) return;
     
@@ -39,7 +41,7 @@ function renderNavbar(commonConfig) {
                 </a>
 
                 <div class="relative">
-                    <button id="topicsBtn" onclick="toggleTopicsMenu()" class="text-xs font-medium px-3.5 py-2 rounded-lg border border-[#d8e2dc] text-[#2b2d42] hover:bg-[#f4f7f4] transition flex items-center gap-1.5 cursor-pointer shadow-sm">
+                    <button id="topicsBtn" onclick="Blog.toggleTopicsMenu()" class="text-xs font-medium px-3.5 py-2 rounded-lg border border-[#d8e2dc] text-[#2b2d42] hover:bg-[#f4f7f4] transition flex items-center gap-1.5 cursor-pointer shadow-sm">
                         ${navbarConfig.topicsBtnText} <span class="text-[10px]">▾</span>
                     </button>
                     
@@ -62,13 +64,13 @@ function renderNavbar(commonConfig) {
             </div>
 
             <div class="flex items-center gap-3">
-                <button onclick="copyWalletAddress()" class="text-xs font-medium px-3.5 py-2 rounded-lg border border-[#588157] text-[#588157] hover:bg-[#588157] hover:text-white transition cursor-pointer">
+                <button onclick="Blog.copyWalletAddress()" class="text-xs font-medium px-3.5 py-2 rounded-lg border border-[#588157] text-[#588157] hover:bg-[#588157] hover:text-white transition cursor-pointer">
                     ${navbarConfig.supportBtnText}
                 </button>
-                <button onclick="showToast(window.SITE_CONFIG.messages.walletComingSoon)" class="text-xs font-medium px-4 py-2 rounded-lg bg-[#588157] text-white hover:bg-[#3a5a40] shadow-sm transition cursor-pointer">
+                <button onclick="Blog.showToast(window.SITE_CONFIG.messages.walletComingSoon)" class="text-xs font-medium px-4 py-2 rounded-lg bg-[#588157] text-white hover:bg-[#3a5a40] shadow-sm transition cursor-pointer">
                     ${navbarConfig.connectWalletBtnText}
                 </button>
             </div>
         </header>
     `;
-}
+};
