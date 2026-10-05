@@ -40,12 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     // 4. 渲染联系我们与底部
-
-    // 渲染独立的 Contact 板块（由 appscript.js 提供）
-    if (window.ContactModule) {
-        window.ContactModule.render(config);
-    }
-    
+    renderContactSection(commonConfig);
     renderFooter(commonConfig);
     
     // 5. 绑定全局交互事件
