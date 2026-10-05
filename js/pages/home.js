@@ -5,7 +5,6 @@
 window.Blog = window.Blog || {};
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 增加对 databar 配置的校验
     if (!window.SITE_CONFIG || !window.DATABAR_CONFIG || !window.PAGE_CONFIG) {
         console.error("Configurations not found!");
         return;
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const databarConfig = window.DATABAR_CONFIG;
     const pageConfig = window.PAGE_CONFIG;
     
-    // 合并数据库配置 (通过扩展运算符层层合并)
     const mergedDatabase = {
         ...databarConfig.database,
         ...(pageConfig.database || {})
@@ -49,4 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // 5. 绑定全局交互事件
     Blog.initGlobalEvents();
+
+    // 6. 钱包：恢复已连接状态 + 监听账户变化
+    Blog.tryRestoreWallet();
+    Blog.bindWalletEvents();
 });

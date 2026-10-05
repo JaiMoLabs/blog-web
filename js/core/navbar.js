@@ -67,7 +67,11 @@ Blog.renderNavbar = function(commonConfig) {
                 <button onclick="Blog.copyWalletAddress()" class="text-xs font-medium px-3.5 py-2 rounded-lg border border-[#588157] text-[#588157] hover:bg-[#588157] hover:text-white transition cursor-pointer">
                     ${navbarConfig.supportBtnText}
                 </button>
-                <button onclick="Blog.showToast(window.SITE_CONFIG.messages.walletComingSoon)" class="text-xs font-medium px-4 py-2 rounded-lg bg-[#588157] text-white hover:bg-[#3a5a40] shadow-sm transition cursor-pointer">
+                <button
+                    id="connect-wallet-btn"
+                    onclick="Blog.handleWalletButtonClick()"
+                    class="text-xs font-medium px-4 py-2 rounded-lg bg-[#588157] text-white hover:bg-[#3a5a40] shadow-sm transition cursor-pointer"
+                >
                     ${navbarConfig.connectWalletBtnText}
                 </button>
             </div>
