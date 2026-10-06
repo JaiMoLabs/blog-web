@@ -1,9 +1,10 @@
 // ==========================================
-// 左侧数据库侧边栏组件 (js/components/sidebar.js)
+// 左侧数据库侧边栏组件 / Database sidebar component
 // ==========================================
 
 window.Blog = window.Blog || {};
 
+// 渲染数据库分类及文章导航 / Render database categories and article navigation
 Blog.renderSidebar = function(database) {
     return `
         <div class="space-y-6">

@@ -1,5 +1,5 @@
 // ==========================================
-// 首页主逻辑入口 (js/pages/home.js)
+// 首页主逻辑入口 / Home page entry point
 // ==========================================
 
 window.Blog = window.Blog || {};
@@ -14,19 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const databarConfig = window.DATABAR_CONFIG;
     const pageConfig = window.PAGE_CONFIG;
     
+    // 合并公共数据库配置与首页专属配置 / Merge shared database configuration with home page overrides
     const mergedDatabase = {
         ...databarConfig.database,
         ...(pageConfig.database || {})
     };
     
-    // 1. 初始化网页基础元信息
+    // 1. 初始化网页基础元信息 / Initialize basic document metadata
     Blog.initDocumentMeta(commonConfig.meta);
     
-    // 2. 渲染公共外设模块
-    Blog.renderNavbar(commonConfig);
+    // 2. 渲染公共页面模块 / Render shared page components
+    Blog.renderNavbar();
     Blog.renderHero(commonConfig);
     
-    // 3. 渲染主干内容
+    // 3. 渲染首页主体内容 / Render the main home page content
     const mainContainer = document.getElementById("main-container");
     if (mainContainer) {
         mainContainer.innerHTML = `
@@ -41,14 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
     
-    // 4. 渲染联系我们与底部
+    // 4. 渲染联系与底部模块 / Render contact and footer components
     Blog.renderContactSection(commonConfig);
     Blog.renderFooter(commonConfig);
     
-    // 5. 绑定全局交互事件
+    // 5. 绑定全局交互事件 / Bind global interaction events
     Blog.initGlobalEvents();
 
-    // 6. 钱包：恢复已连接状态 + 监听账户变化
+    // 6. 恢复钱包状态并监听账户变化 / Restore wallet state and listen for account changes
     Blog.tryRestoreWallet();
     Blog.bindWalletEvents();
 });

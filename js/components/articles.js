@@ -1,17 +1,22 @@
 // ==========================================
-// 右侧文章流组件 (js/components/articles.js)
+// 右侧文章流组件 / Latest articles component
 // ==========================================
 
 window.Blog = window.Blog || {};
 
+// 渲染最新文章列表 / Render the latest article list
 Blog.renderLatestArticles = function(database) {
     let allArticles = [];
+
+    // 合并所有分类中的文章，并附加分类信息 / Flatten articles from all categories and attach category metadata
     database.categories.forEach(cat => {
         cat.articles.forEach(art => {
             allArticles.push({ ...art, categoryName: cat.name, categoryIcon: cat.icon });
         });
     });
 
+    // 按日期倒序排列，并获取指定数量的最新文章
+    // Sort by date in descending order and keep the configured number of latest articles
     allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
     const latestArticles = allArticles.slice(0, database.latestCount);
 

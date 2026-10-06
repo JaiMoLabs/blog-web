@@ -1,5 +1,5 @@
 // ==========================================
-// 底部栏组件 (js/core/footer.js)
+// 底部栏组件 / Footer component
 // ==========================================
 
 window.Blog = window.Blog || {};
@@ -9,6 +9,7 @@ Blog.renderFooter = function(commonConfig) {
     if (!container) return;
     const footer = commonConfig.footer;
 
+    // 根据配置中的栏目数量动态设置桌面端 Grid 列数 / Dynamically set desktop grid columns based on the configured footer columns
     const totalCols = 2 + footer.columns.length;
     let styleTag = document.getElementById('dynamic-footer-style');
     if (!styleTag) {
@@ -33,7 +34,7 @@ Blog.renderFooter = function(commonConfig) {
                             </div>
                             <span class="font-bold text-base text-[#2b2d42]">${Blog.escapeHtml(commonConfig.meta.siteName)}</span>
                         </div>
-                        <p class="text-xs text-gray-500">${Blog.escapeHtml(footer.copyright)}</p>
+                        <p class="text-xs text-gray-500">@${new Date().getFullYear()} ${Blog.escapeHtml(footer.copyright)}</p>
                     </div>
 
                     ${footer.columns.map(col => `
@@ -59,4 +60,4 @@ Blog.renderFooter = function(commonConfig) {
             </div>
         </footer>
     `;
-}
+};

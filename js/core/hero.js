@@ -1,5 +1,5 @@
 // ==========================================
-// 顶部背景组件 (js/core/hero.js)
+// 顶部背景组件 / Hero section component
 // ==========================================
 
 window.Blog = window.Blog || {};
@@ -8,7 +8,7 @@ Blog.renderHero = function(commonConfig) {
     const heroContainer = document.getElementById("hero-container");
     if(!heroContainer) return;
 
-    // 直接从公共配置的 meta 中获取背景图和标题等信息
+    // 从公共配置中获取站点信息与 Hero 文案 / Get site information and Hero content from the shared configuration
     const meta = commonConfig.meta;
 
     heroContainer.innerHTML = `
@@ -22,4 +22,4 @@ Blog.renderHero = function(commonConfig) {
             </div>
         </div>
     `;
-}
+};

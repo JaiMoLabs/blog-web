@@ -1,17 +1,20 @@
 // ==========================================
-// 文章数据库配置文件 (js/config/pages/databar.js)
+// 文章数据库配置 / Article database configuration
 // ==========================================
 
 window.DATABAR_CONFIG = {
     database: {
+        // 数据库标题与分类列表 / Database title and category list
         title: "Database",
         titleIcon: "🌱",
         categories: [
             {
+                // 分类名称与图标 / Category name and icon
                 name: "Topics",
                 icon: "📊",
                 articles: [
                     {
+                        // 文章唯一标识 / Unique article identifier
                         id: "token-price-simulation",
                         title: "Token Price Simulation",
                         date: "2026/10/10",

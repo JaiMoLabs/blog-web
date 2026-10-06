@@ -1,19 +1,22 @@
 // ==========================================
-// 顶部导航栏组件 (js/core/navbar.js)
+// 顶部导航栏组件 / Top navigation bar component
 // ==========================================
 
 window.Blog = window.Blog || {};
 
-Blog.renderNavbar = function(commonConfig) {
+const commonConfig = window.SITE_CONFIG;
+
+Blog.renderNavbar = function() {
     const container = document.getElementById('navbar-container');
     if (!container) return;
     
-    // 直接从全局 commonConfig.navbar 获取配置
+    // 获取导航配置并按类型拆分菜单项 / Load navigation configuration and separate menu items by type
     const navbarConfig = commonConfig.navbar;
     const menuItems = navbarConfig.topicsMenu || [];
     const contentItems = menuItems.filter(item => item.type !== 'action');
     const actionItems = menuItems.filter(item => item.type === 'action');
 
+    // 根据菜单项配置生成下拉菜单内容 / Generate dropdown menu items from configuration
     const renderDropdownItem = (item) => {
         const isExternal = item.link.startsWith('http');
         const targetAttr = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
@@ -64,15 +67,15 @@ Blog.renderNavbar = function(commonConfig) {
             </div>
 
             <div class="flex items-center gap-3">
-                <button onclick="Blog.copyWalletAddress()" class="text-xs font-medium px-3.5 py-2 rounded-lg border border-[#588157] text-[#588157] hover:bg-[#588157] hover:text-white transition cursor-pointer">
-                    ${navbarConfig.supportBtnText}
+                <button onclick="Blog.handleSupportClick()" class="text-xs font-medium px-3.5 py-2 rounded-lg border border-[#588157] text-[#588157] hover:bg-[#588157] hover:text-white transition cursor-pointer">
+                    ${commonConfig.support.supportBtnText}
                 </button>
                 <button
                     id="connect-wallet-btn"
                     onclick="Blog.handleWalletButtonClick()"
                     class="text-xs font-medium px-4 py-2 rounded-lg bg-[#588157] text-white hover:bg-[#3a5a40] shadow-sm transition cursor-pointer"
                 >
-                    ${navbarConfig.connectWalletBtnText}
+                    ${commonConfig.wallet.connectBtnText}
                 </button>
             </div>
         </header>
