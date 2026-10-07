@@ -27,6 +27,7 @@ Blog.validateEmailDomain = async function(domain) {
 // 验证邮箱并提交至 Google Apps Script / Validate the email and submit it to Google Apps Script
 Blog.subscribeEmailToSheet = async function() {
     const config = window.SITE_CONFIG;
+    const contactConfig = config.contact;
     const emailInput = document.getElementById('subscriber-email');
     const submitBtn = document.getElementById('submit-btn');
 
@@ -37,18 +38,18 @@ Blog.subscribeEmailToSheet = async function() {
     // 基础邮箱格式检查 / Basic email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email)) {
-        Blog.showToast(config.messages.emailInvalid);
+        Blog.showToast(contactConfig.messages.emailInvalid);
         return;
     }
 
     const domain = email.split('@').pop().toLowerCase();
     const originalText = submitBtn.innerText;
-    submitBtn.innerText = config.messages.emailSubmitting;
+    submitBtn.innerText = contactConfig.messages.emailSubmitting;
     submitBtn.disabled = true;
 
     // 检查邮箱域名是否真实存在 / Check whether the email domain actually exists
     if (!await Blog.validateEmailDomain(domain)) {
-        Blog.showToast(config.messages.emailInvalid);
+        Blog.showToast(contactConfig.messages.emailInvalid);
         submitBtn.innerText = originalText;
         submitBtn.disabled = false;
         return;
@@ -57,7 +58,7 @@ Blog.subscribeEmailToSheet = async function() {
     const scriptURL = config.api && config.api.googleScriptURL;
     if (!scriptURL) {
         console.error("Google Apps Script URL not configured!");
-        Blog.showToast(config.messages.emailError);
+        Blog.showToast(contactConfig.messages.emailError);
         submitBtn.innerText = originalText;
         submitBtn.disabled = false;
         return;
@@ -70,12 +71,12 @@ Blog.subscribeEmailToSheet = async function() {
         body: JSON.stringify({ email: email })
     })
     .then(() => {
-        Blog.showToast(config.messages.emailSuccess);
+        Blog.showToast(contactConfig.messages.emailSuccess);
         emailInput.value = '';
     })
     .catch(error => {
         console.error('Error submitting email!', error);
-        Blog.showToast(config.messages.emailError);
+        Blog.showToast(contactConfig.messages.emailError);
     })
     .finally(() => {
         submitBtn.innerText = originalText;

@@ -33,41 +33,41 @@ window.SITE_CONFIG = {
     wallet: {
         connectBtnText: "Connect Wallet",
         messages: {
-            walletNotFound: "未检测到钱包，请先安装 MetaMask",
-            connecting: "正在连接钱包...",
-            connectedWithEns: "已连接：",
-            connected: "钱包已连接",
-            addressNotFound: "未获取到钱包地址",
-            cancelled: "你取消了钱包连接",
-            failed: "连接失败，请重试",
-            accountSwitchedWithEns: "已切换到 ",
-            accountSwitched: "账户已切换",
-            disconnected: "钱包已断开",
-            addressCopied: "地址已复制",
-            copyFailed: "复制失败，请手动复制"
+            walletNotFound: "❌ No wallet detected; please install MetaMask first.",
+            connecting: "Connecting wallet...",
+            connectedWithEns: "Connected: ",
+            connected: "✅ Wallet connected!",
+            addressNotFound: "❌ Wallet address not retrieved.",
+            cancelled: "You cancelled the wallet connection.",
+            failed: "❌ Connection failed, please try again.",
+            accountSwitchedWithEns: "Switched to ",
+            accountSwitched: "Account switched.",
+            disconnected: "❌ Wallet disconnected.",
+            addressCopied: "✅ Address copied!",
+            copyFailed: "❌ Copy failed; please copy manually."
         }
     },
 
-    // 支持/赞助功能配置 / Support and donation configuration
+    // 支持、赞助功能配置 / Support and donation configuration
     support: {
         supportBtnText: "Support",
         walletAddress: "jaimo.eth",
         amountEth: "0.002",
         messages: {
             copySuccess: "✅ ENS Address Copied!",
-            copyError: "复制失败，请手动复制",
-            walletNotFound: "未检测到钱包，请先安装 MetaMask",
-            ethersNotLoaded: "支付组件未加载，请刷新后重试",
-            preparing: "正在准备支付...",
-            resolveFailed: "无法解析目标地址",
-            transactionPending: "交易已提交，等待确认...",
-            success: "支持成功，感谢！",
-            cancelled: "你取消了支付",
-            insufficientFunds: "余额不足，请确保主网有足够 ETH",
-            failed: "支付失败，请稍后重试",
-            switchMainnet: "请切换到以太坊主网...",
-            switchMainnetFailed: "切换主网失败，请手动切换后重试",
-            switchMainnetRequired: "需要切换到以太坊主网才能支付"
+            copyError: "❌ Copy failed; please copy manually.",
+            walletNotFound: "❌ No wallet detected; please install MetaMask first.",
+            ethersNotLoaded: "❌ Payment component failed to load; please refresh and try again.",
+            preparing: "Preparing payment...",
+            resolveFailed: "❌ Unable to resolve the target address.",
+            transactionPending: "Transaction submitted, awaiting confirmation...",
+            success: "✅ Support successful—thank you!",
+            cancelled: "You cancelled the payment.",
+            insufficientFunds: "❌ Support 0.002 ETH; Insufficient balance.",
+            failed: "❌ Payment failed; please try again later.",
+            switchMainnet: "Please switch to the Ethereum mainnet...",
+            switchMainnetFailed: "❌ Failed to switch to the mainnet; please switch manually and try again.",
+            switchMainnetRequired: "❌ You need to switch to the Ethereum mainnet to make the payment."
         },
         // Ethereum Mainnet 网络参数 / Ethereum Mainnet network parameters
         network: {
@@ -78,20 +78,18 @@ window.SITE_CONFIG = {
             rpcUrls: ["https://ethereum.publicnode.com"],
             blockExplorerUrls: ["https://etherscan.io"]
         }
-    },
-
-    // 全局提示信息 / Global notification messages
-    messages: {
-        emailInvalid: "❌ Please enter a valid email address.",
-        emailSubmitting: "Submitting...",
-        emailSuccess: "✅ Thank you for subscribing!",
-        emailError: "❌ Something went wrong, please try again later."
-    },
+    },    
 
     // 联系区域配置 / Contact section configuration
     contact: {
         title: "Connect with us",
         subtitle: "Have questions, feedback, or want to collaborate? Reach out through our official channels.",
+        messages: {
+            emailInvalid: "❌ Please enter a valid email address.",
+            emailSubmitting: "Submitting...",
+            emailSuccess: "✅ Thank you for subscribing!",
+            emailError: "❌ Something went wrong, please try again later."
+        },
         cards: {
             support: {
                 title: "Get Support",
