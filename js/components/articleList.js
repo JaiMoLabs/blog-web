@@ -45,7 +45,7 @@ Blog.renderLatestArticles = function(database) {
             </div>
 
             <div class="text-center pt-4 text-sm text-gray-500">
-                Showing ${latestArticles.length} latest updates. Explore all topics in the ${database.titleIcon} <span class="font-semibold text-gray-700">${Blog.escapeHtml(database.title)}</span> on the left.
+                Showing ${latestArticles.length} latest updates. Explore all topics in the <span class="font-semibold text-gray-700">${Blog.escapeHtml(database.title)}</span> on the left.
             </div>
         </div>
     `;

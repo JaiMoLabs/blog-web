@@ -18,15 +18,15 @@ Blog.renderNavbar = function() {
 
     // 根据菜单项配置生成下拉菜单内容 / Generate dropdown menu items from configuration
     const renderDropdownItem = (item) => {
-        const isExternal = item.link.startsWith('http');
-        const targetAttr = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
-        const externalIcon = isExternal 
+        const openInNewTab = item.link.startsWith('http') || item.type === 'article';
+        const targetAttr = openInNewTab ? ' target="_blank" rel="noopener noreferrer"' : '';
+        const externalIcon = openInNewTab 
             ? `<span class="text-[10px] text-gray-400 opacity-70 ml-2 group-hover:text-[#588157] transition-colors">↗</span>` 
             : '';
         
         return `
             <a href="${item.link}"${targetAttr} 
-               class="group flex items-center justify-between px-3 py-2.5 mx-2 my-1 text-sm text-[#2b2d42] bg-transparent hover:bg-[#f4f7f4] rounded-lg transition-all duration-200 cursor-pointer">
+            class="group flex items-center justify-between px-3 py-2.5 mx-2 my-1 text-sm text-[#2b2d42] bg-transparent hover:bg-[#f4f7f4] rounded-lg transition-all duration-200 cursor-pointer">
                 <span class="font-medium group-hover:text-[#588157] transition-colors">${item.name}</span>
                 ${externalIcon}
             </a>
