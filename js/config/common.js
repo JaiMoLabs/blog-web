@@ -5,7 +5,7 @@
 window.SITE_CONFIG = {
     // 站点基础信息 / Basic site information
     meta: {
-        title: "JaiMo Labs | Blog",
+        title: "JaiMo Core | Blog",
         logoImg: "images/avatar.png",
         backgroundImage: "images/background.png",
         siteName: "JaiMo Blogs",
@@ -112,19 +112,19 @@ window.SITE_CONFIG = {
 
     // 页脚配置 / Footer configuration
     footer: {
-        copyright: "JaiMo Labs. All rights reserved.",
+        copyright: "JaiMo Core. All rights reserved.",
         tagline: "Decentralized & Autonomous",
         columns: [
             {
                 title: "Topics",
                 links: [
-                    { name: "Token Price Simulation", url: "https://github.com/jaimoeth/topics/blob/main/token-price-simulation.ipynb" }
+                    { name: "Token Price Simulation", url: "article.html?article=token-price-simulation" }
                 ]
             },
             {
                 title: "Career",
                 links: [
-                    { name: "Coming Soon.", url: "https://github.com/JaiMoLabs" }
+                    { name: "Coming Soon.", url: "https://github.com/jaimocore" }
                 ]
             },
             {
@@ -137,8 +137,7 @@ window.SITE_CONFIG = {
             {
                 title: "Products",
                 links: [
-                    { name: "Blog Website", url: "https://github.com/JaiMoLabs/blog-web" },
-                    { name: "Text Website", url: "https://github.com/JaiMoLabs/text-web" }
+                    { name: "Blog Website", url: "https://github.com/jaimocore/blog-web" }
                 ]
             }
         ]

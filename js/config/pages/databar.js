@@ -16,16 +16,8 @@ window.DATABAR_CONFIG = {
                         "title": "Blog Website",
                         "date": "2026-10-03",
                         "tag": "Products",
-                        "url": "https://github.com/JaiMoLabs/blog-web",
+                        "url": "article.html?article=blog-website",
                         "summary": "An open-source template for Web3 static blogs and personal knowledge bases, showcasing decentralized web practices."
-                    },
-                    {
-                        "id": "text-website",
-                        "title": "Text Website",
-                        "date": "2026-10-15",
-                        "tag": "Products",
-                        "url": "https://github.com/JaiMoLabs/text-web",
-                        "summary": "An open-source template for Web3 static blog content pages, designed to be used with open-source blog content."
                     }
                 ]
             },
